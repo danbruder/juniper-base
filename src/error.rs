@@ -3,10 +3,8 @@
 //
 use std::fmt::{Display,Formatter,Result};
 use validator::ValidationErrors;
-use std::error::Error;
 use self::Error::*;
 
-#[derive(Debug)]
 pub enum Error {
     DieselError(diesel::result::Error),
     ValidationError,
@@ -26,7 +24,7 @@ impl Display for Error {
         match self {
             AccessDenied => write!(f, "Access denied"),
             ValidationError => write!(f, "Error"),
-            DieselError(ref e) => write!(f, "{}", e.description()),
+            DieselError(ref e) => write!(f, "{}", e),
         }
     }
 }

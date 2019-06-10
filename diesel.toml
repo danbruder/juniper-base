@@ -3,9 +3,3 @@
 
 [print_schema]
 file = "src/schema.rs"
-filter = { only_tables = [
-  "smart_track.drawings",
-  "smart_track.features",
-  "smart_track.parts",
-  "smart_track.status",
-] }
